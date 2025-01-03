@@ -1,0 +1,27 @@
+#  Download the installer
+
+wget -O jfrog-deb-installer.tar.gz "https://releases.jfrog.io/artifactory/jfrog-prox/org/artifactory/pro/deb/jfrog-platform-trial-prox/[RELEASE]/jfrog-platform-trial-prox-[RELEASE]-deb.tar.gz"
+
+#  Extract it
+
+tar -xvzf jfrog-deb-installer.tar.gz
+
+# CD into directory
+
+cd jfrog-platform-trial-pro*
+
+#  Run the installer
+
+sudo ./install.sh
+
+# Start Artifactory
+
+sudo systemctl start artifactory.service
+
+#  Start Xray
+
+sudo systemctl start xray.service
+
+# Open your browser and go to
+
+http://localhost:8082/
